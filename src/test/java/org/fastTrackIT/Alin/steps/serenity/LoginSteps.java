@@ -37,4 +37,19 @@ public class LoginSteps extends ScenarioSteps {
         setCredentials(email, password);
         clickLogIn();
     }
+
+    @Step
+    public boolean verifyLoginMsg(String userName){
+        return loginPage.verifyLoginMsg(userName);
+    }
+
+    @Step
+    public boolean invalidUserLoginMsg(){
+        return loginPage.checkMsgInvalidUser();
+    }
+
+    @Step
+    public boolean invalidPassLoginMsg(String username){
+        return loginPage.checkMsgInvalidPass(username);
+    }
 }

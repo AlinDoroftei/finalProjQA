@@ -25,6 +25,9 @@ public class RegisterPage extends PageObject {
     @FindBy(css=".woocommerce-error>li")
     private WebElementFacade errorEmailMsg;
 
+    @FindBy(css=".woocommerce-password-strength")
+    private WebElementFacade errorPassMsg;
+
     public void clickLoginLink() {
         clickOn(registerLink);
     }
@@ -45,7 +48,12 @@ public class RegisterPage extends PageObject {
         return helloMessage.getText();
     }
 
-    public String CheckErrorEmailMsg(){errorEmailMsg.getText();
-        return errorEmailMsg.getText();
+    public boolean checkErrorEmailMsg(String expectedMsg){
+        String actualMsg = errorEmailMsg.getText();
+        return  actualMsg.equals(expectedMsg);
+    }
+    public boolean checkErrorPassMsg(String expectedPassMsg){
+        String actualPassMsg = errorPassMsg.getText();
+        return  actualPassMsg.equals(expectedPassMsg);
     }
 }

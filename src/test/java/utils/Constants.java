@@ -7,6 +7,7 @@ import java.util.Random;
 
 public class Constants {
 
+    public static final String USER_NAME = "alin.doroftei";
     public static final String USER_EMAIL = "alin.doroftei@yahoo.com";
     public static final String USER_PASS = "Alin.123!";
 

@@ -15,7 +15,7 @@ public class SearchResultPage extends PageObject {
 
     public boolean checkListForProduct(String productName){
         for (WebElementFacade element:productList){
-            if (element.findElement(By.cssSelector(".entry-title a[href*=\"t-shirt-with-logo\"]")).getText().equalsIgnoreCase(productName)){
+            if (element.getText().equalsIgnoreCase(productName)){
                 return true;
             }
         } return false;

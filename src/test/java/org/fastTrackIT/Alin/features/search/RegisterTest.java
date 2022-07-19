@@ -19,10 +19,10 @@ public class RegisterTest extends BaseTest{
     public void registerWithInvalidEmail() {
         loginSteps.navigateToHomepage();
         loginSteps.navigateToLoginPage();
-        registerSteps.setEmailAddress("alin.doroftei"+randomNb+"yahoo.com");
+        registerSteps.setEmailAddress("alin.doroftei"+randomNb+"@yahoocom");
         registerSteps.setPassword(Constants.USER_PASS);
         registerSteps.clickRegisterButton();
-//        Assert.assertEquals("Please provide a valid email address.", registerSteps.checkErrorEmailMsg() );
+        Assert.assertTrue("Error message is  not displayed", registerSteps.checkErrorEmailMsg("Error: Please provide a valid email address.") );
     }
 
     @Test
@@ -31,7 +31,6 @@ public class RegisterTest extends BaseTest{
         loginSteps.navigateToLoginPage();
         registerSteps.setEmailAddress("alin.doroftei"+randomNb+"@yahoo.com");
         registerSteps.setPassword("123456");
-//        registerSteps.clickRegisterButton();        buton inactiv
-//        Assert.assertEquals("alin.doroftei"+randomNb, registerSteps.checkMessage() );
+        Assert.assertTrue("Error message is not displayed", registerSteps.checkErrorPassMsg("Very weak - Please enter a stronger password."));
     }
 }

@@ -10,7 +10,7 @@ public class ProductPage extends PageObject {
     private WebElementFacade addToCartButton;
 
     @FindBy(css=".woocommerce-message")
-    private WebElementFacade successCartMesage;
+    private WebElementFacade successCartMessage;
 
     @FindBy(css="p.price .woocommerce-Price-amount ")
     private WebElementFacade totalFinalPrice;
@@ -25,7 +25,7 @@ public class ProductPage extends PageObject {
     public void clickAddToCartButton(){clickOn(addToCartButton);}
 
     public void verifySuccessMessage(String productName) {
-        successCartMesage.containsText(productName+ " has been added to your cart.");
+        successCartMessage.containsText(productName+ " has been added to your cart.");
     }
 
     public String getProductPrice(){

@@ -40,7 +40,12 @@ public class RegisterSteps extends ScenarioSteps {
     }
 
     @Step
-    public String checkErrorEmailMsg(){registerPage.CheckErrorEmailMsg();
-    return registerPage.CheckErrorEmailMsg();
+    public boolean checkErrorEmailMsg(String expectedMsg){
+        return registerPage.checkErrorEmailMsg(expectedMsg);
+    }
+
+    @Step
+    public boolean checkErrorPassMsg(String expectedPassMsg){
+        return registerPage.checkErrorPassMsg(expectedPassMsg);
     }
 }
