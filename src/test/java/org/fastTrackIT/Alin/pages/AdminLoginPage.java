@@ -18,8 +18,14 @@ public class AdminLoginPage extends PageObject {
     @FindBy(id="wp-submit")
     private WebElementFacade loginButton;
 
-    @FindBy(css="welcome-panel-content")
+    @FindBy(css=".welcome-panel-content")
     private WebElementFacade welcomeMessage;
+
+    @FindBy(id="login_error")
+    private WebElementFacade invalidUsername;
+
+    @FindBy(id="login_error")
+    private WebElementFacade invalidPass;
 
 
     public void setUserField(String user) {
@@ -34,8 +40,16 @@ public class AdminLoginPage extends PageObject {
         clickOn(loginButton);
     }
 
-    public boolean checkWelcomeMessage(){welcomeMessage.getText();
-    return Boolean.parseBoolean(welcomeMessage.getText());
+    public boolean checkWelcomeMessage(){
+        return welcomeMessage.getText().contains("Welcome to WordPress!");
     }
+
+    public boolean checkInvalidUsernameLogin(){
+        return invalidUsername.getText().contains("ERROR"+": Invalid username");
+    }
+    public boolean checkInvalidPassLogin(String adminUsername){
+        return invalidPass.getText().contains("ERROR"+": The password you entered for the username "+adminUsername+" is incorrect. ");
+    }
+
 }
 

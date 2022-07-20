@@ -25,6 +25,7 @@ public class CheckoutTest extends BaseTest{
         checkoutSteps.setPhoneNb("0700123456");
         checkoutSteps.setEmail("alin.doroftei@gmail.com");
         checkoutSteps.clickPlaceOrder();
+        Assert.assertTrue("Error message is  not displayed", checkoutSteps.checkConfirmationCheckout("Thank you. Your order has been received.") );
     }
 
     @Test
@@ -37,5 +38,7 @@ public class CheckoutTest extends BaseTest{
         productSteps.clickViewCartButton();
         cartSteps.clickProceedCheckout();
         checkoutSteps.clickPlaceOrder();
+        Assert.assertTrue("Error message is  not displayed", checkoutSteps.checkConfirmationCheckout("Thank you. Your order has been received.") );
+
     }
 }

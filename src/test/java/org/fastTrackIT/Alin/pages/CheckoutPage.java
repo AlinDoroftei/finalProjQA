@@ -39,7 +39,7 @@ public class CheckoutPage extends PageObject {
     @FindBy(id = "place_order")
     private WebElementFacade placeOrder;
 
-    @FindBy(css = "p.woocommerce-notice")
+    @FindBy(css = ".woocommerce-notice")
     private WebElementFacade checkConfirmationOrder;
 
 
@@ -83,6 +83,9 @@ public class CheckoutPage extends PageObject {
         clickOn(placeOrder);
     }
 
-
+    public boolean checkoutConfirmationMsg(String expectedMsg){
+        String actualMsg = checkConfirmationOrder.getText();
+        return  actualMsg.equals(expectedMsg);
+    }
 }
 

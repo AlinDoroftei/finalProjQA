@@ -41,4 +41,13 @@ public class AdminLoginSteps extends ScenarioSteps {
     public boolean welcomeText(){
         return adminLoginPage.checkWelcomeMessage();
     }
+
+    @Step
+    public boolean invalidUsername(){
+        return adminLoginPage.checkInvalidUsernameLogin();
+    }
+    @Step
+    public boolean invalidPass(String adminUsername){
+        return adminLoginPage.checkInvalidPassLogin(adminUsername);
+    }
 }

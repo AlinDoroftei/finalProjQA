@@ -11,6 +11,6 @@ public class SearchTest extends BaseTest{
         searchSteps.doSearch("shirt");
         searchSteps.verifyProductInResult("T-Shirt with Logo");
         searchSteps.openProduct("T-Shirt with Logo");
-        Assert.assertEquals("Title not the same!","T-Shirt with Logo",productSteps.getProductName());
+        Assert.assertEquals("Title not the same!","T-Shirt with Logo", productSteps.getProductName());
     }
 }

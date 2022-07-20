@@ -37,9 +37,10 @@ public class CheckoutSteps extends ScenarioSteps {
     @Step
     public void clickPlaceOrder(){checkoutPage.clickPlaceOrder();}
 
-//    @Step
-//    public String checkoutMessage(){
-//    }
+    @Step
+    public boolean checkConfirmationCheckout(String expectedMsg){
+        return checkoutPage.checkoutConfirmationMsg(expectedMsg);
+    }
 
 
 
