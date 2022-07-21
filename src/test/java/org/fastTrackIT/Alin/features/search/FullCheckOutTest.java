@@ -22,7 +22,6 @@ public class FullCheckOutTest extends BaseTest {
         commerceAdminSteps.createCoupon();
         commerceAdminSteps.goCouponPage();
         Assert.assertTrue("Coupon not found!",commerceAdminSteps.validateCouponsCreated(random));
-
         commerceAdminSteps.doLogout();
         loginSteps.doLogin(org.fasttrackit.utils.Constants.USER_EMAIL, org.fasttrackit.utils.Constants.USER_PASS);
         searchSteps.doSearch("shirt");
@@ -36,7 +35,6 @@ public class FullCheckOutTest extends BaseTest {
         cartSteps.addCouponCode(random);
         cartSteps.applyCoupon();
         cartSteps.validateCouponApplied();
-
         cartSteps.clickProceedCheckout();
 //        checkoutSteps.setFirstName("Alin");
 //        checkoutSteps.setLastName("Doroftei");

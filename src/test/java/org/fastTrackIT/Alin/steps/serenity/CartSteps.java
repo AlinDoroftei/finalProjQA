@@ -30,7 +30,7 @@ public class CartSteps extends ScenarioSteps {
 
     @Step
     public String getCartTotal(){
-        return cartPage.getCartTotalofProduct();
+        return cartPage.getCartTotalOfProduct();
     }
 
     @Step

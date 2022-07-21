@@ -41,7 +41,9 @@ public class CheckoutSteps extends ScenarioSteps {
     public boolean checkConfirmationCheckout(String expectedMsg){
         return checkoutPage.checkoutConfirmationMsg(expectedMsg);
     }
-
-
+    @Step
+    public boolean invalidMandatoryField(String expectedMsg){
+        return checkoutPage.checkMsgInvalidMandatoryField(expectedMsg);
+    }
 
 }

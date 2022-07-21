@@ -13,4 +13,13 @@ public class ProductTest extends BaseTest{
         productSteps.clickAddToCart();
         productSteps.verifySuccessMesage("T-Shirt with Logo");
     }
+
+    @Test
+    public void addProductToCartAsGuest(){
+        loginSteps.doLogin(Constants.USER_EMAIL,Constants.USER_PASS);
+        searchSteps.doSearch("shirt");
+        searchSteps.selectProductFromList("T-Shirt with Logo");
+        productSteps.clickAddToCart();
+        productSteps.verifySuccessMesage("T-Shirt with Logo");
+    }
 }

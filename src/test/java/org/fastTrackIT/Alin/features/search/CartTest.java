@@ -36,9 +36,9 @@ public class CartTest extends BaseTest {
         searchSteps.selectProductFromList("T-Shirt with Logo");
         productSteps.clickAddToCart();
         productSteps.clickViewCartButton();
-        cartSteps.typeQuantity("5");
+        cartSteps.typeQuantity("4");
         cartSteps.updateQuantity();
-        String calculatedTotal = cartSteps.calculateCartTotal("5");
+        String calculatedTotal = cartSteps.calculateCartTotal("4");
         String total = cartSteps.getCartTotal();
         Assert.assertEquals(calculatedTotal,total);
     }

@@ -42,6 +42,9 @@ public class CheckoutPage extends PageObject {
     @FindBy(css = ".woocommerce-notice")
     private WebElementFacade checkConfirmationOrder;
 
+    @FindBy(css=".woocommerce-error")
+    private WebElementFacade checkMandatoryField;
+
 
     public void typeFirstName(String firstName) {
         typeInto(setFirstName, firstName);
@@ -84,7 +87,13 @@ public class CheckoutPage extends PageObject {
     }
 
     public boolean checkoutConfirmationMsg(String expectedMsg){
+        checkConfirmationOrder.waitUntilVisible();
         String actualMsg = checkConfirmationOrder.getText();
+        return  actualMsg.equals(expectedMsg);
+    }
+    public boolean checkMsgInvalidMandatoryField(String expectedMsg){
+        checkMandatoryField.waitUntilVisible();
+        String actualMsg = checkMandatoryField.getText();
         return  actualMsg.equals(expectedMsg);
     }
 }

@@ -12,7 +12,7 @@ public class CartPage extends BasePage {
     private WebElementFacade cartProductPrice;
 
     @FindBy(css =".product-subtotal .woocommerce-Price-amount")
-    private WebElementFacade cartTotalofProduct;
+    private WebElementFacade cartTotalOfProduct;
 
     @FindBy(css=".product-quantity .input-text")
     private WebElementFacade productQuantity;
@@ -50,8 +50,8 @@ public class CartPage extends BasePage {
         return appPrice(price * productQuantity);
     }
 
-    public String getCartTotalofProduct(){
-        return cartTotalofProduct.getText().split(" ")[0];
+    public String getCartTotalOfProduct(){
+        return cartTotalOfProduct.getText().split(" ")[0];
     }
 
     public void insertQuantity(String quantity){
