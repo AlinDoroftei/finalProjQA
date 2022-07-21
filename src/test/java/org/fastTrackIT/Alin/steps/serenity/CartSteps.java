@@ -51,4 +51,7 @@ public class CartSteps extends ScenarioSteps {
 
     @Step
     public void clickProceedCheckout(){cartPage.clickCheckoutButton();}
+
+    @Step
+    public void clearCart(){cartPage.deleteItemsFromCart();}
 }

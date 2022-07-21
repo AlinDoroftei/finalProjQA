@@ -34,6 +34,12 @@ public class CartPage extends BasePage {
     @FindBy(css=".checkout-button")
     private WebElementFacade checkoutButton;
 
+    @FindBy(css="td.product-remove a")
+    private WebElementFacade removeItemButton;
+
+    @FindBy(css=".cart-empty")
+    private WebElementFacade checkEmptyCart;
+
 
     public String getCartProductName(){
         return cartProductName.getText();
@@ -79,4 +85,11 @@ public class CartPage extends BasePage {
     }
 
     public void clickCheckoutButton(){clickOn(checkoutButton);}
+
+    public void deleteItemsFromCart(){
+        while (!checkEmptyCart.isPresent()) {
+            removeItemButton.click();
+        }
+    }
+
 }

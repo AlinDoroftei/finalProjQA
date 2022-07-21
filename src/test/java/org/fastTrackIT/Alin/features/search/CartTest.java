@@ -8,6 +8,8 @@ public class CartTest extends BaseTest {
     @Test
     public void verifyCartAmount() {
         loginSteps.doLogin(org.fasttrackit.utils.Constants.USER_EMAIL, org.fasttrackit.utils.Constants.USER_PASS);
+        productSteps.clickViewCartButton();
+        cartSteps.clearCart();
         searchSteps.doSearch("shirt");
         searchSteps.selectProductFromList("T-Shirt with Logo");
         productSteps.clickAddToCart();
