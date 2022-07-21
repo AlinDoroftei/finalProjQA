@@ -2,10 +2,9 @@ package org.fastTrackIT.Alin.steps.serenity;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.fastTrackIT.Alin.pages.AdminCommercePage;
 import org.fastTrackIT.Alin.pages.AdminCouponsPage;
 import org.fastTrackIT.Alin.pages.AdminHomePage;
-import org.fastTrackIT.Alin.pages.AdminCommercePage;
-import org.junit.Assert;
 
 public class AdminCommerceSteps extends ScenarioSteps {
     private AdminHomePage adminHomePage;

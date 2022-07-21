@@ -21,7 +21,6 @@ public class HomePage extends PageObject {
     private WebElementFacade enterSearchButton;
 
 
-
     public void clickLoginLink(){
         clickOn(signInLink);
     }
@@ -32,8 +31,5 @@ public class HomePage extends PageObject {
         typeInto(searchField, keyword);}
 
     public void clickSearchIcon(){clickOn(enterSearchButton);}
-
-
-
 
 }

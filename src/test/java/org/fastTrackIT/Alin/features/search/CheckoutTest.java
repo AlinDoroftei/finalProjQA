@@ -4,11 +4,11 @@ import net.thucydides.core.annotations.DefaultUrl;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class CheckoutTest extends BaseTest{
+public class CheckoutTest extends BaseTest {
 
 
     @Test
-    public void checkoutTestAsGuest(){
+    public void checkoutTestAsGuest() {
         loginSteps.navigateToHomepage();
         searchSteps.doSearch("shirt");
         searchSteps.selectProductFromList("T-Shirt with Logo");
@@ -25,11 +25,11 @@ public class CheckoutTest extends BaseTest{
         checkoutSteps.setPhoneNb("0700123456");
         checkoutSteps.setEmail("alin.doroftei@gmail.com");
         checkoutSteps.clickPlaceOrder();
-        Assert.assertTrue("Error message is  not displayed", checkoutSteps.checkConfirmationCheckout("Thank you. Your order has been received.") );
+        Assert.assertTrue("Error message is  not displayed", checkoutSteps.checkConfirmationCheckout("Thank you. Your order has been received."));
     }
 
     @Test
-    public void checkoutTest(){
+    public void checkoutTest() {
         loginSteps.doLogin(org.fasttrackit.utils.Constants.USER_EMAIL, org.fasttrackit.utils.Constants.USER_PASS);
         loginSteps.navigateToHomepage();
         searchSteps.doSearch("shirt");
@@ -38,10 +38,12 @@ public class CheckoutTest extends BaseTest{
         productSteps.clickViewCartButton();
         cartSteps.clickProceedCheckout();
         checkoutSteps.clickPlaceOrder();
-        Assert.assertTrue("Error message is  not displayed", checkoutSteps.checkConfirmationCheckout("Thank you. Your order has been received.") );
+        Assert.assertTrue("Error message is  not displayed", checkoutSteps.checkConfirmationCheckout("Thank you. Your order has been received."));
     }
 
-    @Test public void checkoutTestWithoutMandatoryFields(){loginSteps.navigateToHomepage();
+    @Test
+    public void checkoutTestWithoutMandatoryFields() {
+        loginSteps.navigateToHomepage();
         searchSteps.doSearch("shirt");
         searchSteps.selectProductFromList("T-Shirt with Logo");
         productSteps.clickAddToCart();
@@ -56,6 +58,6 @@ public class CheckoutTest extends BaseTest{
         checkoutSteps.setPhoneNb("0700123456");
         checkoutSteps.setEmail("alin.doroftei@gmail.com");
         checkoutSteps.clickPlaceOrder();
-        Assert.assertTrue("Error message is  not displayed", checkoutSteps.invalidMandatoryField("Billing Last name is a required field.") );
+        Assert.assertTrue("Error message is  not displayed", checkoutSteps.invalidMandatoryField("Billing Last name is a required field."));
     }
 }

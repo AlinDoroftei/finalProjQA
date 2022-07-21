@@ -12,13 +12,6 @@ public class RegisterSteps extends ScenarioSteps {
     private SearchResultPage searchPage;
     private RegisterPage registerPage;
 
-//    @Step
-//    public void navigateToHomepage(){
-//        homePage.open();
-//    }
-//
-//    @Step
-//    public void navigateToLoginPage(){homePage.clickLoginLink();}
 
     @Step
     public void setEmailAddress(String emailAddress){registerPage.setEmailAddress(emailAddress);}

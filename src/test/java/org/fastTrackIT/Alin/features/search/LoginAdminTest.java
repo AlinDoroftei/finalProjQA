@@ -5,17 +5,17 @@ import org.junit.Assert;
 import org.junit.Test;
 import utils.*;
 
-public class LoginAdminTest extends BaseTest{
+public class LoginAdminTest extends BaseTest {
     @Test
-    public void loginWithValidCredentials(){
+    public void loginWithValidCredentials() {
         loginAdminSteps.navigateToAdminPage();
         loginAdminSteps.setCredentials(Constants.ADMIN, Constants.ADMIN_PASS);
         loginAdminSteps.clickLogIn();
-        Assert.assertTrue("Login error!",loginAdminSteps.welcomeText());
+        Assert.assertTrue("Login error!", loginAdminSteps.welcomeText());
     }
 
     @Test
-    public void loginWithInvalidEmail(){
+    public void loginWithInvalidEmail() {
         loginAdminSteps.navigateToAdminPage();
         loginAdminSteps.setCredentials("alin.doro", Constants.ADMIN_PASS);
         loginAdminSteps.clickLogIn();
@@ -23,9 +23,9 @@ public class LoginAdminTest extends BaseTest{
     }
 
     @Test
-    public void loginWithInvalidPass(){
+    public void loginWithInvalidPass() {
         loginAdminSteps.navigateToAdminPage();
-        loginAdminSteps.setCredentials(Constants.ADMIN,"123456");
+        loginAdminSteps.setCredentials(Constants.ADMIN, "123456");
         loginAdminSteps.clickLogIn();
         Assert.assertTrue("Invalid error message is not displayed!", loginAdminSteps.invalidPass(Constants.ADMIN));
     }

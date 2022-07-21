@@ -3,7 +3,6 @@ package org.fastTrackIT.Alin.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
-import net.thucydides.core.webelements.RadioButtonGroup;
 
 public class RegisterPage extends PageObject {
 
@@ -28,9 +27,6 @@ public class RegisterPage extends PageObject {
     @FindBy(css=".woocommerce-password-strength")
     private WebElementFacade errorPassMsg;
 
-    public void clickLoginLink() {
-        clickOn(registerLink);
-    }
 
     public void setEmailAddress(String email){
         typeInto(emailAddressField, email);
@@ -52,6 +48,7 @@ public class RegisterPage extends PageObject {
         String actualMsg = errorEmailMsg.getText();
         return  actualMsg.equals(expectedMsg);
     }
+
     public boolean checkErrorPassMsg(String expectedPassMsg){
         String actualPassMsg = errorPassMsg.getText();
         return  actualPassMsg.equals(expectedPassMsg);

@@ -4,12 +4,7 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
-import java.time.Duration;
-
 public class LoginPage extends PageObject {
-
-//    @FindBy(css=".site-header-right-link")
-//    private WebElementFacade signInLink;
 
     @FindBy(id = "username")
     private WebElementFacade userField;
@@ -30,10 +25,6 @@ public class LoginPage extends PageObject {
     private WebElementFacade checkInvalidPass;
 
 
-//    public void clickLoginLink() {
-//        clickOn(signInLink);
-//    }
-
     public void setUserField(String user) {
         typeInto(userField, user);
     }
@@ -46,7 +37,6 @@ public class LoginPage extends PageObject {
         clickOn(loginButton);
     }
 
-
     public boolean verifyLoginMsg(String userName){
         return verifyLoginMsg.getText().contains("Hello " + userName);
     }
@@ -54,6 +44,7 @@ public class LoginPage extends PageObject {
     public boolean checkMsgInvalidUser(){
         return checkInvalidUsername.getText().contains(("ERROR: Invalid username."));
     }
+
     public boolean checkMsgInvalidPass(String username){
         return checkInvalidPass.getText().contains(("ERROR: The password you entered for the email address "+ username+" is incorrect."));
     }

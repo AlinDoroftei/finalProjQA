@@ -40,9 +40,8 @@ public class BaseTest extends org.fasttrackit.utils.Constants {
     protected CheckoutSteps checkoutSteps;
 
 
-
     @Before
-    public void maximaze(){
+    public void maximaze() {
         webDriver.manage().window().maximize();
     }
 }
