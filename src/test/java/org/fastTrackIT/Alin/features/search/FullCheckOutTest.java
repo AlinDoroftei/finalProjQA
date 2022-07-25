@@ -46,7 +46,6 @@ public class FullCheckOutTest extends BaseTest {
 //        checkoutSteps.setPostcode("407280");
 //        checkoutSteps.setPhoneNb("0700123456");
         checkoutSteps.clickPlaceOrder();
-//        Assert.assertEquals("Thank you. Your order has been received.", checkoutSteps.checkoutMessage());
 
 
     }

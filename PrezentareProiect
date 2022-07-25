@@ -1,0 +1,21 @@
+Doroftei Alin
+
+Proiect: AutomationTesting – FastTrackIT-QA3 – Proiect pentru testarea automata a unui site Web: http://qa3.fasttrackit.org:8008/
+In cadrul acestui proiect, am realizat o serie de teste automare, care au ca scop testarea anumitor functionalitati de baza ale aplicatiei, cum ar fi:
+•	Register – crearea unui nou cont de utilizator sau de administrator, atat cu date valide cat si cu date invalide.
+•	Login – autentificarea pe contul de utilizator sau de administrator atat cu date valide cat si cu date invalide.
+•	Admin – crearea unor tichete de discount.
+•	Products – selectarea unui produs dintr-o lista de produse.
+•	Cart – verificarea totalului calculat in urma schimbarii cantitatii unui produs in cosul de cumparaturi.
+•	Checkout – finalizarea comenzii atat cu date valide cat si cu date invalide.
+•	Search – cautarea unui produs, dupa un cuvant cheie.
+Descriere:
+AutomationTesting – FastTrackIT-QA3 este un proiect de testare automata dezvoltat in limbajul Java.
+
+Aplicatia FastTrackIT-QA3 pe care am realizat testele, este un magazin demonstrativ, de test, iar toate comenzile realizate in urma testelor nu vor fi onorate.
+
+Tehnologii folosite :
+•	Java
+•	Selenium
+•	JUnit
+•	Serenity
